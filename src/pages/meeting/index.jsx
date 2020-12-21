@@ -3,7 +3,7 @@ import * as Cookies from "js-cookie";
 
 import "./meeting.css";
 import AgoraVideoCall from "../../components/AgoraVideoCall";
-import { AGORA_APP_ID } from "../../agora.config";
+import { AGORA_APP_ID, AGORA_TOKEN } from "../../agora.config";
 
 class Meeting extends React.Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class Meeting extends React.Component {
     this.attendeeMode = Cookies.get("attendeeMode") || "video";
     this.baseMode = Cookies.get("baseMode") || "avc";
     this.appId = AGORA_APP_ID;
+    this.token = AGORA_TOKEN;
     if (!this.appId) {
       return alert("Get App ID first!");
     }
@@ -45,6 +46,7 @@ class Meeting extends React.Component {
               attendeeMode={this.attendeeMode}
               baseMode={this.baseMode}
               appId={this.appId}
+              token={this.token}
               uid={this.uid}
             />
           </div>

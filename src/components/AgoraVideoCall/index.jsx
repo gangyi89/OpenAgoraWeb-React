@@ -60,6 +60,7 @@ class AgoraCanvas extends React.Component {
   }
 
   componentWillMount() {
+    console.log("DEEBUG - COMPONENT WILL MOUNT");
     let $ = this.props;
     // init AgoraRTC local client
     this.client = AgoraRTC.createClient({ mode: $.transcode });
@@ -113,6 +114,7 @@ class AgoraCanvas extends React.Component {
   // }
 
   componentDidUpdate() {
+    console.log("DEEBUG STREAMLIST", this.state.streamList);
     // rerendering
     let canvas = document.querySelector("#ag-canvas");
     // pip mode (can only use when less than 4 people in channel)

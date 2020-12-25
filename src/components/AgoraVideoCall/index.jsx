@@ -433,6 +433,7 @@ class AgoraCanvas extends React.Component {
         <i className="ag-icon ag-icon-leave"></i>
       </span>
     );
+    console.log("PRINT PROPS", this.props);
 
     return (
       <div id="ag-canvas" style={style}>
